@@ -357,6 +357,8 @@ class Manager(object):
 
             # Check the IV percent of the Pokemon
             if iv != '?':
+                if iv == 100:
+                    name += " - PERFECT IV!"
                 if not filt.check_iv(iv):
                     if self.__quiet is False:
                         log.info("{} rejected: IV percent ({:.2f}) not in range {:.2f} to {:.2f} - (F #{})".format(

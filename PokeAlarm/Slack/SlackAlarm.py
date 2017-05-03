@@ -103,10 +103,10 @@ class SlackAlarm(Alarm):
         self.send_message(
             channel=replace(alert['channel'], info),
             username=replace(alert['username'], info),
-            text='<{}|{}> - {}'.format(replace(alert['url'], info), replace(alert['title'], info),
-                                          replace(alert['body'], info)),
+            text='{}\n<{}|{}>'.format(replace(alert['title'], info),replace(alert['url'], info),  replace(alert['body'], info)),
             icon_url=replace(alert['icon_url'], info),
             attachments=attachments
+			#,'as_user': 'true'
         )
 
     # Trigger an alert based on Pokemon info
