@@ -106,7 +106,6 @@ class SlackAlarm(Alarm):
             text='{}\n<{}|{}>'.format(replace(alert['title'], info),replace(alert['url'], info),  replace(alert['body'], info)),
             icon_url=replace(alert['icon_url'], info),
             attachments=attachments
-			#,'as_user': 'true'
         )
 
     # Trigger an alert based on Pokemon info
@@ -146,7 +145,8 @@ class SlackAlarm(Alarm):
         args = {
             "channel": self.get_channel(channel),
             "username": username,
-            "text": text
+            "text": text,
+			"as_user" : "true"
         }
         if icon_url is not None:
             args['icon_url'] = icon_url
